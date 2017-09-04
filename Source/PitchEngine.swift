@@ -1,4 +1,3 @@
-import UIKit
 import AVFoundation
 import Pitchy
 
@@ -41,19 +40,10 @@ public class PitchEngine {
 
   // MARK: - Initialization
 
-  public init(config: Config = Config(), signalTracker: SignalTracker? = nil, delegate: PitchEngineDelegate? = nil) {
+  public init(config: Config = Config(), signalTracker: SignalTracker, delegate: PitchEngineDelegate? = nil) {
     bufferSize = config.bufferSize
     estimator = EstimationFactory.create(config.estimationStrategy)
-
-    if let signalTracker = signalTracker {
-      self.signalTracker = signalTracker
-    } else {
-      if let audioUrl = config.audioUrl {
-        self.signalTracker = OutputSignalTracker(audioUrl: audioUrl, bufferSize: bufferSize)
-      } else {
-        self.signalTracker = InputSignalTracker(bufferSize: bufferSize)
-      }
-    }
+    self.signalTracker = signalTracker
 
     queue = DispatchQueue(label: "BeethovenQueue", attributes: [])
     self.signalTracker.delegate = self
@@ -63,39 +53,7 @@ public class PitchEngine {
   // MARK: - Processing
 
   public func start() {
-    guard mode == .playback else {
       activate()
-      return
-    }
-
-    let audioSession = AVAudioSession.sharedInstance()
-
-    switch audioSession.recordPermission() {
-    case AVAudioSessionRecordPermission.granted:
-      activate()
-    case AVAudioSessionRecordPermission.denied:
-      DispatchQueue.main.async {
-        if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
-          UIApplication.shared.openURL(settingsURL)
-        }
-      }
-    case AVAudioSessionRecordPermission.undetermined:
-      AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted  in
-        guard let weakSelf = self else { return }
-
-        guard granted else {
-          weakSelf.delegate?.pitchEngineDidReceiveError(weakSelf,
-            error: PitchEngineError.recordPermissionDenied as Error)
-          return
-        }
-
-        DispatchQueue.main.async {
-          weakSelf.activate()
-        }
-      }
-    default:
-      break
-    }
   }
 
   public func stop() {

@@ -8,7 +8,6 @@
 //
 //
 
-import UIKit
 import Accelerate
 
 class YINUtil {

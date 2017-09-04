@@ -6,8 +6,6 @@
 //  Copyright © 2016 Vadym Markov. All rights reserved.
 //
 
-import UIKit
-
 struct YINEstimator: Estimator {
 
   let transformer: Transformer = YINTransformer()

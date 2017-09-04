@@ -29,6 +29,13 @@ import AVFoundation
  * #endif
  *
  */
+
+extension SimulatorSignalTracker {
+    static func mocked() -> SimulatorSignalTracker {
+        return "" as! SimulatorSignalTracker
+    }
+}
+
 public class SimulatorSignalTracker: SignalTracker {
 
   public var mode: SignalTrackerMode = .record
@@ -83,8 +90,8 @@ public class SimulatorSignalTracker: SignalTracker {
   }
 
   private func createPCMBuffer(_ frequency: Double) -> AVAudioPCMBuffer {
-    let format = AVAudioFormat(standardFormatWithSampleRate: SimulatorSignalTracker.sampleRate, channels: 1)
-    let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(SimulatorSignalTracker.sampleCount))
+    let format = AVAudioFormat(standardFormatWithSampleRate: SimulatorSignalTracker.sampleRate, channels: 1)!
+    let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(SimulatorSignalTracker.sampleCount))!
 
     if let channelData = buffer.floatChannelData {
       let velocity = Float32(2.0 * M_PI * frequency / SimulatorSignalTracker.sampleRate)
