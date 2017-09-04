@@ -17,24 +17,21 @@ class ViewController: NSViewController, PitchEngineDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let frequencies = try? [
-          391.995435981749,
-          391.995435981749,
-          415.304697579945,
-          Note(letter: Note.Letter.A, octave: 4).frequency,
-          466.163761518090,
-          466.163761518090,
-          Note(letter: Note.Letter.A, octave: 4).frequency,
-          415.304697579945,
-          391.995435981749
-        ]
+        let frameLength = 1024
+        let sampleRate = 8000.0
         
-        let config = Config(bufferSize: AVAudioFrameCount(1024), estimationStrategy: .yin, audioUrl: nil)
-        let signalTracker = SimulatorSignalTracker(frequencies: frequencies, delayMs: 1000)
+        let config = Config(bufferSize: AVAudioFrameCount(frameLength), estimationStrategy: .yin, audioUrl: nil)
+        let signalTracker = CustomSignalTracker(sampleRate: sampleRate, sampleLength: frameLength)
         let pitchEngine = PitchEngine(config: config, signalTracker: signalTracker, delegate: self)
         pitchEngine.start()
         
-        self.pitchEngine = pitchEngine
+        var signal: [Float] = Array(repeating: 0, count: frameLength)
+        for i in 0..<frameLength {
+            let sample: Float32 = sin(0.2 * Float32(i))
+            signal[i] = sample
+        }
+        signalTracker.passSignal(samples: signal)
+        signalTracker.passSignal(samples: signal)
     }
     
     func pitchEngineDidReceivePitch(_ pitchEngine: PitchEngine, pitch: Pitch) {
@@ -49,4 +46,3 @@ class ViewController: NSViewController, PitchEngineDelegate {
         debugPrint("treshold")
     }
 }
-
