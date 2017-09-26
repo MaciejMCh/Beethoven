@@ -34,8 +34,6 @@
 		D59CB1641C345E0A00290B63 /* QuinnsSecondEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB1471C345E0A00290B63 /* QuinnsSecondEstimator.swift */; };
 		D59CB1661C345E0A00290B63 /* PitchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB14A1C345E0A00290B63 /* PitchEngine.swift */; };
 		D59CB1671C345E0A00290B63 /* SignalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB14C1C345E0A00290B63 /* SignalTracker.swift */; };
-		D59CB1681C345E0A00290B63 /* InputSignalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB14E1C345E0A00290B63 /* InputSignalTracker.swift */; };
-		D59CB1691C345E0A00290B63 /* OutputSignalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB14F1C345E0A00290B63 /* OutputSignalTracker.swift */; };
 		D59CB16A1C345E0A00290B63 /* FFTTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB1521C345E0A00290B63 /* FFTTransformer.swift */; };
 		D59CB16B1C345E0A00290B63 /* SimpleTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB1531C345E0A00290B63 /* SimpleTransformer.swift */; };
 		D59CB16C1C345E0A00290B63 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59CB1541C345E0A00290B63 /* Transformer.swift */; };
@@ -87,8 +85,6 @@
 		D59CB1471C345E0A00290B63 /* QuinnsSecondEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuinnsSecondEstimator.swift; sourceTree = "<group>"; };
 		D59CB14A1C345E0A00290B63 /* PitchEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchEngine.swift; sourceTree = "<group>"; };
 		D59CB14C1C345E0A00290B63 /* SignalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTracker.swift; sourceTree = "<group>"; };
-		D59CB14E1C345E0A00290B63 /* InputSignalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSignalTracker.swift; sourceTree = "<group>"; };
-		D59CB14F1C345E0A00290B63 /* OutputSignalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputSignalTracker.swift; sourceTree = "<group>"; };
 		D59CB1521C345E0A00290B63 /* FFTTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTTransformer.swift; sourceTree = "<group>"; };
 		D59CB1531C345E0A00290B63 /* SimpleTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTransformer.swift; sourceTree = "<group>"; };
 		D59CB1541C345E0A00290B63 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
@@ -295,8 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				E0BF88FC1E85C31A00079F64 /* SimulatorSignalTracker.swift */,
-				D59CB14E1C345E0A00290B63 /* InputSignalTracker.swift */,
-				D59CB14F1C345E0A00290B63 /* OutputSignalTracker.swift */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -493,7 +487,6 @@
 				D59CB1671C345E0A00290B63 /* SignalTracker.swift in Sources */,
 				D59CB16C1C345E0A00290B63 /* Transformer.swift in Sources */,
 				D59CB1661C345E0A00290B63 /* PitchEngine.swift in Sources */,
-				D59CB1691C345E0A00290B63 /* OutputSignalTracker.swift in Sources */,
 				D5843EE41DBD2D290077F86E /* YINUtil.swift in Sources */,
 				D59CB1611C345E0A00290B63 /* MaxValueEstimator.swift in Sources */,
 				D59CB15F1C345E0A00290B63 /* HPSEstimator.swift in Sources */,
@@ -501,7 +494,6 @@
 				D59CB16B1C345E0A00290B63 /* SimpleTransformer.swift in Sources */,
 				D5843EE21DBD2D110077F86E /* Array+Extensions.swift in Sources */,
 				D59CB1571C345E0A00290B63 /* Config.swift in Sources */,
-				D59CB1681C345E0A00290B63 /* InputSignalTracker.swift in Sources */,
 				AF3190521DABE01600C897CA /* YINTransformer.swift in Sources */,
 				D5843EDF1DBD2CF50077F86E /* Buffer.swift in Sources */,
 				D59CB16A1C345E0A00290B63 /* FFTTransformer.swift in Sources */,
