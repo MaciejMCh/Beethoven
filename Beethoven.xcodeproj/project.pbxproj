@@ -58,6 +58,7 @@
 /* Begin PBXFileReference section */
 		AF3190511DABE01600C897CA /* YINTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = YINTransformer.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AFFF3FF01DB633B4004AD9D9 /* YINEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YINEstimator.swift; sourceTree = "<group>"; };
+		C20215061F7AB6E9006275DA /* CustomSignalTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignalTracker.swift; sourceTree = "<group>"; };
 		D51575AB1C343B77006F8E75 /* Beethoven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Beethoven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51575B51C343B77006F8E75 /* Beethoven-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Beethoven-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55C01F71DBD210600575260 /* ConfigSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigSpec.swift; sourceTree = "<group>"; };
@@ -283,6 +284,7 @@
 		D59CB14B1C345E0A00290B63 /* SignalTracking */ = {
 			isa = PBXGroup;
 			children = (
+				C20215061F7AB6E9006275DA /* CustomSignalTracker.swift */,
 				D59CB14D1C345E0A00290B63 /* Units */,
 				D59CB14C1C345E0A00290B63 /* SignalTracker.swift */,
 			);

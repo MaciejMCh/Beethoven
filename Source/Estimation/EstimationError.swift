@@ -4,3 +4,4 @@ public enum EstimationError: Error {
   case unknownLocation
   case unknownFrequency
 }
+

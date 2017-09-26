@@ -1,8 +1,8 @@
 struct EstimationFactory {
-
+  
   static func create(_ strategy: EstimationStrategy) -> Estimator {
     let estimator: Estimator
-
+    
     switch strategy {
     case .quadradic:
       estimator = QuadradicEstimator()
@@ -21,7 +21,8 @@ struct EstimationFactory {
     default:
       estimator = MaxValueEstimator()
     }
-
+    
     return estimator
   }
 }
+
